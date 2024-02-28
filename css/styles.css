@@ -133,6 +133,7 @@ section {
 .header-menu-title {
   display: block;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-menu-title:hover {
   color: #404bbf;
@@ -143,6 +144,7 @@ section {
 
 .header-contacts {
   font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-list {
   display: flex;
@@ -156,13 +158,26 @@ section {
 /* Перша секція */
 
 .hero {
+  max-width: 1440px;
   background-color: #2e2f42;
   padding: 188px 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-people-office.jpeg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top left;
 }
+
 .hero-title {
   text-align: center;
   max-width: 496px;
   margin: 0 auto 48px;
+  color: #fff;
 }
 .hero-button {
   border: none;
@@ -176,6 +191,7 @@ section {
   height: 56px;
   border-radius: 4px;
   margin: 0 auto;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -195,6 +211,18 @@ section {
   display: block;
   flex-basis: calc((100% - 3 * 24px) / 4);
 }
+.advantages-card-icon {
+  display: block;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  padding: 24px 100px;
+  background-color: #f4f4fd;
+  margin-bottom: 8px;
+}
+.card-icon {
+  height: 64px;
+  width: 64px;
+}
 
 /* СЕКЦІЯ КОМАНДА */
 
@@ -205,13 +233,20 @@ section {
   text-align: center;
   margin-bottom: 72px;
 }
+.team-cards-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
 .team-card {
   background-color: #fff;
   text-align: center;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .team-card-text {
-  padding: 32px 0;
+  padding: 32px 16px;
 }
 .team-card-name {
   text-align: center;
@@ -219,18 +254,35 @@ section {
 }
 .team-card-job {
   text-align: center;
+  margin-bottom: 8px;
 }
-
+.team-social {
+  display: flex;
+  justify-content: space-between;
+}
+.team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-icon {
+  fill: #f4f4fd;
+  width: 16px;
+  height: 16px;
+}
+.team-social-link:hover {
+  background-color: #404bbf;
+}
 /* СЕКЦІЯ ПОРТФОЛІО */
 
 .portfolio-title {
   text-align: center;
   margin-bottom: 72px;
-}
-.team-cards-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
 }
 .portfolio-cards-list {
   display: flex;
@@ -239,9 +291,32 @@ section {
   row-gap: 48px;
   column-gap: 24px;
 }
-
-.portfolio-card-title {
-  margin-bottom: 8px;
+.porfolio-card {
+  cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.porfolio-card:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.portfolio-img {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  padding: 40px 32px 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.porfolio-card:hover .portfolio-overlay {
+  transform: translateY(0);
 }
 .portfolio-cards-text {
   padding: 32px 16px;
@@ -250,6 +325,9 @@ section {
   border-bottom: 1px solid #e7e9fc;
 }
 
+.portfolio-card-title {
+  margin-bottom: 8px;
+}
 /* ПІДВАЛ */
 
 .footer {
