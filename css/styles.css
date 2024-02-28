@@ -100,6 +100,7 @@ section {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .header > .container {
   display: flex;
@@ -135,6 +136,7 @@ section {
   padding: 24px 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .header-menu-title:hover {
   color: #404bbf;
 }
@@ -144,17 +146,33 @@ section {
 
 .header-contacts {
   font-style: normal;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-list {
   display: flex;
   gap: 40px;
 }
+.header-contact {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header-contact:hover,
 .header-contact:focus {
   color: #404bbf;
 }
-
+.header-menu li:nth-child(1) .header-menu-title {
+  position: relative;
+  color: #404bbf;
+}
+.header-menu li:nth-child(1) .header-menu-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
 /* Перша секція */
 
 .hero {
@@ -170,7 +188,8 @@ section {
     ),
     url(../images/hero-people-office.jpeg);
   background-repeat: no-repeat, no-repeat;
-  background-position: top left, top left;
+  background-position: center, center;
+  background-size: cover, cover;
 }
 
 .hero-title {
@@ -192,6 +211,7 @@ section {
   border-radius: 4px;
   margin: 0 auto;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -212,10 +232,13 @@ section {
   flex-basis: calc((100% - 3 * 24px) / 4);
 }
 .advantages-card-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   border: 1px solid #8e8f99;
-  padding: 24px 100px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   background-color: #f4f4fd;
   margin-bottom: 8px;
 }
@@ -258,7 +281,8 @@ section {
 }
 .team-social {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 24px;
 }
 .team-social-link {
   display: flex;
@@ -275,7 +299,8 @@ section {
   width: 16px;
   height: 16px;
 }
-.team-social-link:hover {
+.team-social-link:hover,
+.team-social-link:focus {
   background-color: #404bbf;
 }
 /* СЕКЦІЯ ПОРТФОЛІО */
@@ -316,7 +341,7 @@ section {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .porfolio-card:hover .portfolio-overlay {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 .portfolio-cards-text {
   padding: 32px 16px;
@@ -335,6 +360,14 @@ section {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+
+.footer .container {
+  display: flex;
+  justify-content: start;
+  /* align-items: center; */
+  gap: 120px;
+}
+
 .footer-logo {
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -352,4 +385,34 @@ section {
 .footer-text {
   max-width: 264px;
   color: #f4f4fd;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-icon {
+  fill: #f4f4fd;
+  width: 16px;
+  height: 16px;
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: #31d0aa;
+}
+
+.footer-social-text {
+  color: #fff;
+  margin-bottom: 16px;
 }
