@@ -63,6 +63,18 @@ img {
   display: block;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -84,6 +96,8 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
+/* ШАПКА */
+
 .header {
   border-bottom: 1px solid #e7e9fc;
 }
@@ -92,25 +106,6 @@ section {
   justify-content: space-between;
   align-items: center;
 }
-.header-nav {
-  display: flex;
-  justify-content: space-between;
-  color: #2e2f42;
-  align-items: center;
-}
-.header-menu {
-  display: flex;
-  gap: 40px;
-}
-.header-menu-title {
-  display: block;
-  padding: 24px 0;
-}
-.header-contacts-list {
-  display: flex;
-  gap: 40px;
-}
-
 .header-logo {
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -124,23 +119,41 @@ section {
 .logo-span {
   color: #2e2f42;
 }
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  color: #2e2f42;
+  align-items: center;
+}
 .header-menu {
+  display: flex;
+  gap: 40px;
   font-weight: 500;
 }
-
+.header-menu-title {
+  display: block;
+  padding: 24px 0;
+}
 .header-menu-title:hover {
   color: #404bbf;
 }
 .header-menu-title:focus {
   color: #404bbf;
 }
+
 .header-contacts {
   font-style: normal;
+}
+.header-contacts-list {
+  display: flex;
+  gap: 40px;
 }
 .header-contact:hover,
 .header-contact:focus {
   color: #404bbf;
 }
+
+/* Перша секція */
 
 .hero {
   background-color: #2e2f42;
@@ -169,6 +182,22 @@ section {
   background-color: #404bbf;
 }
 
+/* СЕКЦІЯ ПЕРЕВАГИ */
+
+.advantages-card-title {
+  margin-bottom: 8px;
+}
+.advantages-cards-list {
+  display: flex;
+  gap: 24px;
+}
+.advantages-cards-item {
+  display: block;
+  flex-basis: calc((100% - 3 * 24px) / 4);
+}
+
+/* СЕКЦІЯ КОМАНДА */
+
 .team {
   background-color: #f4f4fd;
 }
@@ -192,10 +221,37 @@ section {
   text-align: center;
 }
 
+/* СЕКЦІЯ ПОРТФОЛІО */
+
 .portfolio-title {
   text-align: center;
   margin-bottom: 72px;
 }
+.team-cards-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.portfolio-cards-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+}
+
+.portfolio-card-title {
+  margin-bottom: 8px;
+}
+.portfolio-cards-text {
+  padding: 32px 16px;
+  border-left: 1px solid #e7e9fc;
+  border-right: 1px solid #e7e9fc;
+  border-bottom: 1px solid #e7e9fc;
+}
+
+/* ПІДВАЛ */
+
 .footer {
   background-color: #2e2f42;
   padding-top: 100px;
@@ -218,50 +274,4 @@ section {
 .footer-text {
   max-width: 264px;
   color: #f4f4fd;
-}
-.advantages-cards-list {
-  display: flex;
-  gap: 24px;
-}
-.advantages-cards-item {
-  display: block;
-  flex-basis: calc((100% - 3 * 24px) / 4);
-}
-.team-cards-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-}
-.portfolio-cards-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  row-gap: 48px;
-  column-gap: 24px;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-.advantages-card-title {
-  margin-bottom: 8px;
-}
-.portfolio-cards-text {
-  padding: 32px 16px;
-  border-left: 1px solid #e7e9fc;
-  border-right: 1px solid #e7e9fc;
-  border-bottom: 1px solid #e7e9fc;
-}
-.portfolio-card-title {
-  margin-bottom: 8px;
 }
