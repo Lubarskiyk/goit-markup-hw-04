@@ -381,10 +381,12 @@ section {
 .footer-logo-span {
   color: #f4f4fd;
 }
+.footer-text-logo {
+  margin-right: 120px;
+}
 .footer-text {
   max-width: 264px;
   color: #f4f4fd;
-  margin-right: 120px;
 }
 
 .footer-social {
